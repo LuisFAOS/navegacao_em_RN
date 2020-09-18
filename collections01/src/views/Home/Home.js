@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, TouchableOpacity} from 'react-native'
-import initStyle from './homeStyle'
+import homeStyles from '../../globalStyle/pagesStyles'
 
 
 
@@ -15,25 +15,25 @@ export default function Home({ navigation }){
     }
 
     return (
-        <View style={initStyle.container}>
-            <View style={initStyle.border}>
+        <View style={homeStyles.container}>
+            <View style={homeStyles.border}>
 
-                <Text style={initStyle.text}>
+                <Text style={homeStyles.text}>
                     Home
                 </Text>
 
-                <TouchableOpacity style={initStyle.containerButton}
+                <TouchableOpacity style={homeStyles.containerButton}
                     onPress={openCollection}
                 >
-                    <Text style={initStyle.textButton}>
+                    <Text style={homeStyles.textButton}>
                         Collection
                     </Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={initStyle.containerButton}
+                <TouchableOpacity style={homeStyles.containerButton}
                     onPress={openItem}
                 >
-                    <Text style={initStyle.textButton}>
+                    <Text style={homeStyles.textButton}>
                         Item
                     </Text>
                 </TouchableOpacity>

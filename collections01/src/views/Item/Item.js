@@ -1,21 +1,21 @@
 import React from 'react';
 import { Text, View, TouchableOpacity} from 'react-native'
-import itemStyle from './itemStyle'
+import itemStyles from '../../globalStyle/pagesStyles'
 
 
 export default function Item({ navigation }){
     return (
-        <View style={itemStyle.container}>
-            <View style={itemStyle.border}>
+        <View style={itemStyles.container}>
+            <View style={itemStyles.border}>
 
-                <Text style={itemStyle.text}>
-                    Coleção
+                <Text style={itemStyles.text}>
+                    Item
                 </Text>
 
-                <TouchableOpacity style={itemStyle.containerButton}
+                <TouchableOpacity style={itemStyles.containerButton}
                     onPress={()=> navigation.goBack()}
                 >
-                    <Text style={itemStyle.textButton}>
+                    <Text style={itemStyles.textButton}>
                         Voltar
                     </Text>
                 </TouchableOpacity>

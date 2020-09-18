@@ -1,20 +1,20 @@
 import React from 'react';
 import { Text, View, TouchableOpacity} from 'react-native'
-import collectionStyle from './collectionStyle'
+import collectionStyles from '../../globalStyle/pagesStyles'
 
 export default function Collection({ navigation }){
     return (
-        <View style={collectionStyle.container}>
-            <View style={collectionStyle.border}>
+        <View style={collectionStyles.container}>
+            <View style={collectionStyles.border}>
 
-                <Text style={collectionStyle.text}>
+                <Text style={collectionStyles.text}>
                     Coleção
                 </Text>
 
-                <TouchableOpacity style={collectionStyle.containerButton}
+                <TouchableOpacity style={collectionStyles.containerButton}
                     onPress={()=> navigation.goBack()}
                 >
-                    <Text style={collectionStyle.textButton}>
+                    <Text style={collectionStyles.textButton}>
                         Voltar
                     </Text>
                 </TouchableOpacity>
