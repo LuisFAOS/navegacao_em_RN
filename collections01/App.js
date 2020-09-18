@@ -1,55 +1,17 @@
-import 'react-native-gesture-handler'
 import React from 'react';
+import 'react-native-gesture-handler'
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
-import Home from './src/views/Home/Home'
-import Collection from './src/views/Collection/Collection'
-import Item from './src/views/Item/Item'
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
 
-const STACK = createStackNavigator();
-
-export default function App() {
+import { NavigationContainer, TabActions } from '@react-navigation/native'
+import LoginStackRoutes from './src/Navigation/StackRoutes/LoginStackRoutes';
 
 
-  return (
-    <NavigationContainer>
-        <STACK.Navigator>
-            <STACK.Screen 
-                name='Home' 
-                component={Home} 
-                options={
-                    { cardStyle: styles.homeScreen,
-                      headerStyle: {backgroundColor: '#14417b'},
-                      headerTintColor: '#FFFFFF'
-                    }
-                }
-            />
-            
-            <STACK.Screen 
-                name='Collection'
-                component={Collection} 
-                options={
-                    { cardStyle: styles.collectionScreen,
-                      headerStyle: {backgroundColor: '#14417b'},
-                      headerTintColor: '#FFFFFF'
-                    }
-                }
-            />
-            
-            <STACK.Screen
-                name='Item'
-                component={Item} 
-                options={
-                    { cardStyle: styles.itemScreen,
-                      headerStyle: {backgroundColor: '#14417b'},
-                      headerTintColor: '#FFFFFF'
-                    }
-                }
-            />
-        </STACK.Navigator>
-    </NavigationContainer>
-  );
+export default function App(){
+    return (
+        <NavigationContainer>
+            <LoginStackRoutes/>
+        </NavigationContainer>
+    )
 }
 
 const styles = StyleSheet.create({
@@ -58,6 +20,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  loginScreen: {
+    backgroundColor: '#000000'
   },
   homeScreen: {
       backgroundColor: '#92afd7'
