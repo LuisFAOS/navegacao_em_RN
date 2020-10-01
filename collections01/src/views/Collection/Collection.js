@@ -56,7 +56,6 @@ export default function Collection({ navigation }){
                 </View>
 
                 <FlatList 
-                    showHorizontalScrollIndicator={false}
                     keyExtractor={(item) => item.id}
                     data={collection}
                     renderItem={({ item }) => <List data={item}/>}
