@@ -4,14 +4,27 @@ const LoginStyles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     border: {
         backgroundColor: '#081a31',
         width: '80%',
-        height: 230,
+        height: 'auto',
         borderRadius: 10
     },
+    logo: { 
+        width: 90,
+        height: 90,
+        borderRadius: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+    },
+    logoContainer:{
+        alignItems: 'center',
+        marginBottom: 20,
+        marginTop: 20,
+    },  
     text: {
         fontSize: 20,
         color: '#FFFFFF',
@@ -20,15 +33,16 @@ const LoginStyles = StyleSheet.create({
         padding: 10
     },
     field: {
-        backgroundColor: '#dcedff',
         fontSize: 18,
-        marginHorizontal: 40,
-        marginTop: 5,
-        borderRadius: 5,
-        height: 40,
-        paddingLeft: 10
+        color: '#FFFFFF',
+        marginLeft: 15, 
+        paddingBottom: 10,
+        height: 24,
+        borderBottomWidth: 1,
+        borderColor: 'white'
     },
     ContainerButton: {
+        flexDirection: 'row',
         marginVertical: 20,
         marginHorizontal: 40,
         borderRadius: 5,
@@ -42,7 +56,14 @@ const LoginStyles = StyleSheet.create({
     TextButton: {
         fontSize: 18,
         color: '#FFFFFF',
+        marginLeft: 10,
         fontWeight: 'bold'
+    },
+    inputBox: {
+        flexDirection: 'row',
+        paddingHorizontal: 50,
+        margin: 10,
+        alignItems: 'center'
     }
 })
 

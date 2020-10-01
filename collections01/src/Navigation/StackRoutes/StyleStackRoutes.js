@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   },
   loginScreen: {
     backgroundColor: '#000000'
-  },
+  }, 
   homeScreen: {
       backgroundColor: '#92afd7'
   },

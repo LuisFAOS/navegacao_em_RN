@@ -38,6 +38,14 @@ const pagesStyle = StyleSheet.create({
         fontSize: 18,
         color: '#FFFFFF',
         fontWeight: 'bold',
+    },
+    header: {
+        height: 40,
+        backgroundColor: '#14417b',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: 5
     }
 })
 
