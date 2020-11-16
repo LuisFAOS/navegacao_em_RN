@@ -8,6 +8,7 @@ import DrawerRoutes from '../DrawerRoutes/DrawerRoutes'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Collection from '../../views/Collection/Collection';
 import { MaterialIcons } from '@expo/vector-icons'
+import Item from '../../views/Item/Item';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,6 +16,7 @@ const icones = {
     Home: {name: 'home'},
     Collections: {name: 'storage'},
     Profile: {name: 'person'},
+    Item: {name: 'bookmark'},
 }
 
 export default function TabRoutes() {      
@@ -48,7 +50,12 @@ export default function TabRoutes() {
             <Tab.Screen 
                 name="Profile" 
                 component={Profile}
-                />
+                /> 
+            <Tab.Screen 
+                name="Item" 
+                component={Item}
+                initialParams={{item: {}, operation: 'add'}}
+                /> 
         </Tab.Navigator>
   );
 }
