@@ -41,7 +41,7 @@ const pagesStyle = StyleSheet.create({
     field: {
         width: '100%',
         fontSize: 18,
-        color: '#FFFFFF',
+        color: 'black',
         backgroundColor: '#4c6690r',
         marginLeft: 15,
         padding: 10,
@@ -53,7 +53,7 @@ const pagesStyle = StyleSheet.create({
         width: '100%',
         height: 100,
         fontSize: 18,
-        color: '#FFFFFF',
+        color: 'black',
         backgroundColor: '#4c669f',
         marginLeft: 15,
         padding: 18,

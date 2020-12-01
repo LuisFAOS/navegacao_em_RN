@@ -8,17 +8,18 @@ const List = ({data, details}) => {
 
     return(
         <TouchableOpacity style={ListStyle.ContainerItems} onPress={details}>
-            <LinearGradient colors={['#14417b', '#92afd7', '#92afd7']}>
-                <Text style={{color: 'white', fontWeight: 'bold' , textAlign: 'center'}}> 
-                    {item.title} 
+            <LinearGradient colors={['#14417b', '#92afd7', '#92afd7']} style={{flex:1, paddingVertical: 5, marginVertical: 5}}>
+                <Text style={{color: 'black', fontWeight: 'bold' , textAlign: 'center'}}> 
+                    {item.titulo} 
                 </Text>
-            </LinearGradient>
-            <Text 
-                style={{color: 'white', textAlign: 'center'}}>
-                    {item.author}({item.publicationyear})
-            </Text>
-            <LinearGradient colors={['#92afd7', '#92afd7', '#14417b']}>
-                <Image source={item.photo} style={ListStyle.itemImg} resizeMode="contain"/>
+                <Text 
+                    style={{color: 'black', textAlign: 'center'}}>
+                        {item.autor}({item.anoPublicacao})
+                </Text>
+                <LinearGradient colors={['#92afd7', '#92afd7', '#14417b']}>
+                    <Text></Text>
+                    {/* <Image source={item.photo} style={ListStyle.itemImg} resizeMode="contain"/> */}
+                </LinearGradient>
             </LinearGradient>
         </TouchableOpacity>
     )

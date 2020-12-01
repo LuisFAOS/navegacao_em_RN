@@ -4,6 +4,7 @@ import itemStyles from '../../globalStyle/pagesStyles'
 import { MaterialIcons, FontAwesome } from '@expo/vector-icons'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
+import { LivroFB } from '../../firebase/bookFB';
 
 
 export default function Item({ navigation, route }){
@@ -12,16 +13,21 @@ export default function Item({ navigation, route }){
    
     const {operation, setOperation} = route.params;
 
+    const bookFB = new LivroFB()
+
     useEffect(() =>{
         setItem(route.params.item)
     }, [route.params.item])
 
     const save = () => {
-        
+        operation == 'add' ? bookFB.addBook(item) : bookFB.editBook(item)
+        navigation.navigate('Collection')
     }
 
-    const remove = () => {
-        
+    const remove = (itemRemove) => {
+        console.log(itemRemove)
+        bookFB.removeBook(item)
+        navigation.navigate('Collection')
     }
 
     return (
@@ -44,8 +50,8 @@ export default function Item({ navigation, route }){
                         style={itemStyles.field}
                         placeholder="Title"
                         placeholdertextcolor = "#FFFFFF"
-                        onChangeText = {title => setItem({...item, title})}
-                        value={item.title}
+                        onChangeText = {titulo => setItem({...item, titulo})}
+                        value={item.titulo}
                     />
                     
                 </View>
@@ -57,8 +63,8 @@ export default function Item({ navigation, route }){
                         style={itemStyles.field}
                         placeholder="Author"
                         placeholdertextcolor = "#FFFFFF"
-                        onChangeText = {author => setItem({...item, author})}
-                        value={item.author}
+                        onChangeText = {autor => setItem({...item, autor})}
+                        value={item.autor}
                     />
 
                 </View>
@@ -72,8 +78,8 @@ export default function Item({ navigation, route }){
                         keyboardType = 'numeric'
                         maxLength = {4}
                         placeholdertextcolor = "#FFFFFF"
-                        onChangeText = {publicationyear => setItem({...item, publicationyear})}
-                        value={item.publicationyear ? item.publicationyear.toString() : item.publicationyear}
+                        onChangeText = {anoPublicacao => setItem({...item, anoPublicacao})}
+                        value={item.anoPublicacao ? item.anoPublicacao.toString() : item.anoPublicacao}
                     />
 
                 </View>
@@ -87,19 +93,19 @@ export default function Item({ navigation, route }){
                             multiline={true}
                             numberOfLine={4}
                             placeholdertextcolor = "#FFFFFF"
-                            onChangeText = {description => setItem({...item, description})}
-                            value={item.description}
+                            onChangeText = {descricao => setItem({...item, descricao})}
+                            value={item.descricao}
                         />
                     </ScrollView>
                 </View>
 
                 <View style={itemStyles.buttonsContainer}>
-                    <TouchableOpacity onPress={save} style={itemStyles.buttonContainer}>
+                    <TouchableOpacity onPress={() => save(item)} style={itemStyles.buttonContainer}>
                         <LinearGradient colors={['#4c669f','#192f6a','#081a31']} style={itemStyles.button}>
                             <MaterialIcons name="save" size={28} color="white"/>
                         </LinearGradient>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={remove} style={itemStyles.buttonContainer}>
+                    <TouchableOpacity onPress={() => remove(item)} style={itemStyles.buttonContainer}>
                         <LinearGradient colors={['#4c669f','#192f6a','#081a31']} style={itemStyles.button}>
                             <MaterialIcons name="delete" size={24} color="white"/>
                         </LinearGradient>

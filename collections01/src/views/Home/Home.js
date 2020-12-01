@@ -50,7 +50,7 @@ export default function Home({ navigation }){
                         <Text style={homeStyles.textButton}>
                             Item
                         </Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> 
 
                 </View>
             </ImageBackground>
